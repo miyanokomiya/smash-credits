@@ -1,5 +1,7 @@
 import './style.css'
+import * as App from "./App"
 
+App.hello();
 const app = document.querySelector<HTMLDivElement>('#app')!
 
 app.innerHTML = `
