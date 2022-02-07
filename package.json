@@ -1,15 +1,25 @@
 {
   "name": "smash-credits",
   "version": "0.0.0",
+  "author": "miyanokomiya",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miyanokomiya/smash-credits.git"
+  },
+  "main": "./dist/smash-credits.umd.js",
+  "module": "./dist/smash-credits.es.js",
+  "types": "./dist/smash-credits.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
     "preview": "vite preview",
     "lint:es": "yarn eslint ./src ./*.js ./*.ts --ext .js,.ts",
     "lint:json": "yarn prettier -c ./*.json ./.*.json",
     "lint": "yarn lint:es && yarn lint:json",
     "lint:fix": "yarn lint:es --fix && yarn lint:json --write",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "build:type": "tsc src/App.ts --declaration --emitDeclarationOnly --outFile dist/smash-credits.d.ts",
+    "build": "vite build && yarn build:type"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
