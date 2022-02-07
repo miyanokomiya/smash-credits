@@ -4,10 +4,31 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:es": "yarn eslint ./src --ext .ts",
+    "lint:json": "yarn prettier -c ./*.json ./.*.json",
+    "lint": "yarn lint:es && yarn lint:json",
+    "lint:fix": "yarn lint:es --fix && yarn lint:json --write",
+    "test": "jest --coverage"
   },
   "devDependencies": {
+    "@types/jest": "^27.0.1",
     "@types/node": "^17.0.15",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "babel-jest": "^27.1.1",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.23.1",
+    "eslint-plugin-jest": "^26.1.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "jest": "^27.1.1",
+    "prettier": "^2.4.0",
+    "ts-jest": "^27.0.4",
     "typescript": "^4.4.4",
     "vite": "^2.7.2"
   }
