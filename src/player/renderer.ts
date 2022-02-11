@@ -16,4 +16,6 @@ export class PlayerRenderer {
     this.width = width;
     this.height = height;
   }
+
+  render() {}
 }

@@ -1,3 +1,4 @@
+import { clamp } from "okageo";
 import { Credits } from "../models";
 
 export class PlayerCore {
@@ -13,6 +14,21 @@ export class PlayerCore {
 
   get lastFrame(): number {
     return 0;
+  }
+
+  tick(step = 1) {
+    let nextFrame = this.frame;
+    if (this.playState === "play") {
+      nextFrame += step;
+    } else if (this.playState === "reverse") {
+      nextFrame -= step;
+    }
+
+    this.frame = clamp(0, this.lastFrame, nextFrame);
+
+    if (0 === this.frame || this.frame === this.lastFrame) {
+      this.pause();
+    }
   }
 
   play() {
