@@ -1,13 +1,13 @@
 module.exports = {
-  testEnvironment: 'jsdom',
-  collectCoverageFrom: ['src/**/*.ts', '!**/*.d.ts', '!src/main.ts'],
+  testEnvironment: "jsdom",
+  collectCoverageFrom: ["src/**/*.ts", "!**/*.d.ts", "!src/main.ts"],
   globals: {
-    'ts-jest': {},
+    "ts-jest": {},
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    "^.+\\.tsx?$": "ts-jest",
   },
-  transformIgnorePatterns: ['/node_modules/'],
-}
+  transformIgnorePatterns: ["/node_modules/"],
+};
